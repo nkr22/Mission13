@@ -1,0 +1,142 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model Mission13.Models.Bowler
+
+<section class="container-fluid">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-lg-8 col-xl-6">
+                <br />
+                <br />
+                <div class="card rounded-3">
+                    <img src="https://wallpaperaccess.com/full/1758055.jpg" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">New Bowler</h3>
+
+                        <form class="px-md-2" method="post">
+                            <div class="form-outline mb-4">
+                                <div asp-validation-summary="All"></div>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="text" asp-for="BowlerFirstName" class="form-control" />
+                                <label class="form-label" asp-for="BowlerFirstName"> First Name</label>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div class="form-outline mb-4">
+                                        <input type="text" asp-for="BowlerMiddleInit" class="form-control" />
+                                        <label class="form-label" asp-for="BowlerMiddleInit">Middle Initial</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                <div class="col-md-12">
+
+                                    <div class="form-outline">
+                                        <input type="text" asp-for="BowlerLastName" class="form-control" />
+                                        <label class="form-label" asp-for="BowlerLastName">Last Name</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                <div class="col-md-12">
+
+                                    <div class="form-outline">
+                                        <input type="text" asp-for="BowlerAddress" class="form-control" />
+                                        <label class="form-label" asp-for="BowlerAddress">Address</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                <div class="col-md-12">
+
+                                    <div class="form-outline">
+                                        <input type="text" asp-for="BowlerCity" class="form-control" />
+                                        <label class="form-label" asp-for="BowlerCity">City</label>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                <div class="col-md-12">
+
+                                    <div class="form-outline">
+                                        <input type="text" asp-for="BowlerState" class="form-control" />
+                                        <label class="form-label" asp-for="BowlerState">State</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                <div class="col-md-12">
+
+                                    <div class="form-outline">
+                                        <input type="text" asp-for="BowlerZip" class="form-control" />
+                                        <label class="form-label" asp-for="BowlerZip">Zipcode</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                <div class="col-md-12">
+
+                                    <div class="form-outline">
+                                        <input type="tel" asp-for="BowlerPhoneNumber" class="form-control" />
+                                        <label class="form-label" asp-for="BowlerPhoneNumber">Phone Number</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="row mb-4 pb-2 pb-md-0 mb-md-5">
+                                <div class="col-md-12">
+
+                                    <div class="form-outline">
+                                        <select asp-for="TeamID" class="form-control">
+                                            @if (ViewBag.Team == null)
+                                            {
+                                                <option value="">
+                                                    Select a Team
+                                                </option>
+                                            }
+                                            else
+                                                {
+                                                    <option value="@ViewBag.Team.TeamID">@ViewBag.Team.TeamName</option>
+                                                }
+
+                                            @foreach (Team t in ViewBag.Teams)
+                                            {
+                                                <option value="@t.TeamID">@t.TeamName</option>
+                                            }
+                                        </select>
+                                        <label class="form-label" asp-for="TeamID">Phone Number</label>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-lg mb-1">Submit</button>
+
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
